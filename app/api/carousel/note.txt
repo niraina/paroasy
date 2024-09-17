@@ -1,0 +1,8 @@
+/api/carousel
+/api/carousel?id=1
+
+{
+    file: file,
+    title: string,
+    rank: number,
+}

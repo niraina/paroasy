@@ -1,0 +1,214 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Account {
+  id                 Int       @id @default(autoincrement())
+  userId             Int
+  providerType       String
+  providerId         String
+  providerAccountId  String
+  refreshToken       String?
+  accessToken        String?
+  accessTokenExpires DateTime?
+  createdAt          DateTime  @default(now())
+  updatedAt          DateTime  @updatedAt
+  user               User      @relation(fields: [userId], references: [id])
+
+  // @@unique([providerId, providerAccountId])
+}
+
+model Session {
+  id           Int      @id @default(autoincrement())
+  userId       Int
+  expires      DateTime
+  sessionToken String   @unique
+  accessToken  String   @unique
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  user         User     @relation(fields: [userId], references: [id])
+}
+
+model User {
+  id             Int       @id @default(autoincrement())
+  name           String?
+  email          String?   @unique
+  emailVerified  DateTime?
+  image          String?
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+  accounts       Account[]
+  sessions       Session[]
+  roleId         Int
+  role           Role      @relation(fields: [roleId], references: [id])
+  thumbnail      String?
+  hashedPassword String
+}
+
+model Role {
+  id    Int    @id @default(autoincrement())
+  label String @unique
+  users User[]
+}
+
+model VerificationRequest {
+  id         Int      @id @default(autoincrement())
+  identifier String
+  token      String   @unique
+  expires    DateTime
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  // @@unique([identifier, token])
+}
+
+model Post {
+  id       Int     @id @default(autoincrement())
+  title    String?
+  content  String
+  isPublic Boolean @default(true)
+  tumbnail String
+}
+
+model Page {
+  id       Int     @id @default(autoincrement())
+  title    String?
+  content  String  @db.Text
+  isPublic Boolean @default(true)
+  tumbnail String
+  page     Int     @default(1)
+  type     String
+}
+
+model Preast {
+  id              Int               @id @default(autoincrement())
+  firstName       String
+  lastName        String
+  about           String            @db.Text
+  status          String
+  thumbnail       String
+  birthDate       DateTime
+  egliseId        Int
+  eglise          Eglise            @relation(fields: [egliseId], references: [id])
+  ecoleCathesiste EcoleCathesiste[]
+}
+
+// diosezy
+
+model Eglise {
+  id              Int               @id @default(autoincrement())
+  name            String
+  creationDate    DateTime
+  region          String
+  district        String
+  homonorie       Homonorie[]
+  preast          Preast[]
+  ecoleCathesiste EcoleCathesiste[]
+}
+
+model Homonorie {
+  id          Int    @id @default(autoincrement())
+  name        String
+  responsable String
+  nbZoky      Int
+  nbZandry    Int
+  egliseId    Int
+  eglise      Eglise @relation(fields: [egliseId], references: [id])
+}
+
+model EcoleCathesiste {
+  id       Int     @id @default(autoincrement())
+  name     String
+  eleve    Eleve[]
+  egliseId Int
+  eglise   Eglise  @relation(fields: [egliseId], references: [id])
+  preastId Int
+  preast   Preast  @relation(fields: [preastId], references: [id])
+}
+
+model Eleve {
+  id              Int             @id @default(autoincrement())
+  firstName       String
+  lastName        String
+  birthDate       String
+  intergationDate String
+  ecoleId         Int
+  ecole           EcoleCathesiste @relation(fields: [ecoleId], references: [id])
+}
+
+model Etablisement {
+  id          Int                       @id @default(autoincrement())
+  name        String
+  region      String
+  district    String
+  diocese     String?
+  nbEleve     Int
+  nbCepe      Int?
+  nbBepc      Int?
+  nbBacc      Int?
+  resultCepe  Int?
+  resultBepc  Int?
+  resultBacc  Int?
+  schoolYear  String
+  responsable ResponsableEtablisement[]
+}
+
+model ResponsableEtablisement {
+  id             Int          @id @default(autoincrement())
+  fullName       String
+  poste          String
+  thumbnail      String
+  tel            Int
+  etablisementId Int
+  etablisement   Etablisement @relation(fields: [etablisementId], references: [id])
+}
+
+model Sante {
+  id           Int    @id @default(autoincrement())
+  nomMaladie   String
+  personne     String
+  creationDate String
+  region       String
+  district     String
+}
+
+model DiocesePage {
+  id      Int    @id @default(autoincrement())
+  content String @db.Text
+}
+
+model Tonokira {
+  id      Int    @id @default(autoincrement())
+  title   String
+  content String @db.Text
+}
+
+model RadioPage {
+  id      Int    @id @default(autoincrement())
+  content String @db.Text
+}
+
+model dailyProgram {
+  id           Int    @id @default(autoincrement())
+  content      String @db.Text
+  creationDate String
+}
+
+model PersonelRadio {
+  id        Int    @id @default(autoincrement())
+  fullName  String
+  poste     String
+  tel       String
+  thumbnail String
+}

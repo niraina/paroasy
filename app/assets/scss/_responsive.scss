@@ -1,0 +1,16 @@
+.container {
+    max-width: 1160px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 12px;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+.col-3{
+    width: 25%;
+    @include for-md {
+        width: 100%;
+    }
+}

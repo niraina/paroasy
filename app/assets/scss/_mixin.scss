@@ -1,0 +1,39 @@
+@mixin for-sm {
+    @media (max-width: 575.98px) {
+        @content;
+    }
+}
+
+@mixin for-md {
+    @media (max-width: 767.98px) {
+        @content;
+    }
+}
+
+@mixin for-lg {
+    @media (max-width: 991.98px) {
+        @content;
+    }
+}
+
+@mixin for-xl {
+    @media (max-width: 1199.98px) {
+        @content;
+    }
+}
+
+@mixin for-xxl {
+    @media (min-width: 1200px) {
+        @content;
+    }
+}
+
+input {
+    &::placeholder {
+        font-style: italic;
+    }
+}
+
+label {
+    font-weight: bold;
+}

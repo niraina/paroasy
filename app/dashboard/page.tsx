@@ -1,0 +1,28 @@
+import React from 'react';
+import MenuDash from '../shared/components/MenuDash';
+import { PopLogOut } from '../shared/components/PopLogOut';
+
+const DashboardLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
+  const handleLogout = () => {
+    console.log("first")
+  }
+  return (
+    <div className="flex">
+      <div className="w-64">
+        <MenuDash />
+      </div>
+      <div className="flex-1">
+      <div className="w-full bg-gray-800 text-white flex justify-end">
+        <div className="w-[200px] py-2">
+          <PopLogOut/>
+        </div>
+      </div>
+      <div className="px-[12px]">
+        {children}
+      </div>
+      </div>
+    </div>
+  );
+};
+
+export default DashboardLayout;

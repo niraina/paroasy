@@ -1,0 +1,58 @@
+header {
+    background: $yellow;
+    padding: 12px 0;
+
+    .site-name {
+        color: $blue_dark;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            color: $blue_hover;
+            transition: all 0.3s ease-in-out;
+        }
+    }
+
+    .menu-item-link {
+        color: $blue_dark;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            color: $blue_hover;
+            transition: all 0.3s ease-in-out;
+        }
+    }
+}
+
+.menu-item-sheet {
+    background: $yellow;
+}
+
+.dark {
+    header {
+        background: $blue_dark;
+
+        .site-name {
+            color: $yellow;
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+                color: $white;
+                transition: all 0.3s ease-in-out;
+            }
+        }
+
+        .menu-item-link {
+            color: $yellow;
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+                color: $white;
+                transition: all 0.3s ease-in-out;
+            }
+        }
+    }
+
+    .menu-item-sheet {
+        background: $blue_dark;
+    }
+}
