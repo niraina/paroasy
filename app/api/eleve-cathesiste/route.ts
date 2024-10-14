@@ -16,8 +16,14 @@ export const POST = async (req: NextRequest) => {
   try {
     const secret = new TextEncoder().encode(process.env.JWT_SECRET);
     await jwtVerify(token, secret);
-    const { firstName, lastName, birthDate, intergationDate, ecoleId } =
-      await req.json();
+    const {
+      firstName,
+      lastName,
+      birthDate,
+      intergationDate,
+      ecoleId,
+      endDate,
+    } = await req.json();
 
     // Validation basique
     if (!firstName || !lastName || !birthDate || !intergationDate || !ecoleId) {
@@ -32,6 +38,7 @@ export const POST = async (req: NextRequest) => {
         birthDate,
         intergationDate,
         ecoleId,
+        endDate,
       },
     });
 
@@ -62,7 +69,11 @@ export const GET = async (req: NextRequest) => {
       const datas = await prisma.eleve.findUnique({
         where: { id: Number(id) },
         include: {
-          ecole: true,
+          ecole: {
+            include: {
+              eglise: true, // Inclure l'Eglise
+            },
+          },
         },
       });
 
@@ -109,7 +120,11 @@ export const GET = async (req: NextRequest) => {
         skip: offset,
         take: itemsPerPage,
         include: {
-          ecole: true,
+          ecole: {
+            include: {
+              eglise: true, // Inclure l'Eglise
+            },
+          },
         },
       });
 
@@ -138,7 +153,11 @@ export const GET = async (req: NextRequest) => {
         skip: offset,
         take: itemsPerPage,
         include: {
-          ecole: true,
+          ecole: {
+            include: {
+              eglise: true, // Inclure l'Eglise
+            },
+          },
         },
       });
       return NextResponse.json({
@@ -216,7 +235,7 @@ export const DELETE = async (req: NextRequest) => {
 export const PUT = async (req: NextRequest) => {
   const { searchParams } = new URL(req.url);
   const id = searchParams.get("id");
-  const { firstName, lastName, birthDate, intergationDate, ecoleId } =
+  const { firstName, lastName, birthDate, intergationDate, ecoleId, endDate } =
     await req.json();
   const token = req.cookies.get("token")?.value;
 
@@ -249,6 +268,7 @@ export const PUT = async (req: NextRequest) => {
         birthDate: birthDate,
         intergationDate: intergationDate,
         ecoleId: ecoleId,
+        endDate: endDate,
       },
     });
 

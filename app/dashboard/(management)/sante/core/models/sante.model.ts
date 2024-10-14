@@ -1,3 +1,5 @@
+import { Responsable } from "../../../etablisement/core/models/responsable.model";
+
 export type SanteModel = {
   data: Sante[];
   success: boolean;
@@ -15,6 +17,9 @@ export type Sante = {
   creationDate: string;
   region: string;
   district: string;
+  egliseId: number;
+  congregation: string;
+  responsable?: Responsable;
 };
 
 export type RequestSante = {

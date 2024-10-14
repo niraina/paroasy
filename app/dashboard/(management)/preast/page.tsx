@@ -88,6 +88,7 @@ const EglisePage = () => {
               <TableHead>Date de naissance</TableHead>
               <TableHead>Status</TableHead>
               <TableHead>Eglise</TableHead>
+              <TableHead>Responsable</TableHead>
               <TableHead>Actions</TableHead>
             </TableRow>
           </TableHeader>
@@ -112,6 +113,9 @@ const EglisePage = () => {
                 <TableCell className="font-medium">{item?.status}</TableCell>
                 <TableCell className="font-medium">
                   {item?.eglise?.name}
+                </TableCell>
+                <TableCell className="font-medium">
+                  {item?.isResponsable === "yes" ? "Oui" : "Non"}
                 </TableCell>
                 <TableCell>
                   <div className="flex gap-2">

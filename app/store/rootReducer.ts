@@ -15,6 +15,14 @@ import { RadioReducer } from "../dashboard/(siteweb)/radio/history/core/reducers
 import { DailyProgramReducer } from "../dashboard/(siteweb)/radio/daily-program/core/reducers/home.reducer";
 import { PersonelReducer } from "../dashboard/(siteweb)/radio/personel/core/reducers/personel.reducer";
 import { ResponsableReducer } from "../dashboard/(management)/etablisement/core/reducers/responsable.reducer";
+import { SanteResponsableReducer } from "../dashboard/(management)/sante/core/reducers/sante_responsable.reducer";
+import { TonokiraDailyReducer } from "../dashboard/(siteweb)/daily/core/reducers/home.reducer";
+import { HomonorieReducer } from "../dashboard/(management)/association/core/reducers/homonorie.reducer";
+import { HomonorieResponsableReducer } from "../dashboard/(management)/association/core/reducers/homonorie_responsable.reducer";
+import { LibrairyReducer } from "../dashboard/(management)/librairy/core/reducers/librairy.reducer";
+import { LibrairyResponsableReducer } from "../dashboard/(management)/librairy/core/reducers/librairy_responsable.reducer";
+import { BookReducer } from "../dashboard/(management)/librairy/core/reducers/book.reducer";
+import { FormationReducer } from "../dashboard/(management)/formation/core/reducers/formation.reducer";
 
 export const rootReducers = combineReducers({
   carousel: carouselReducer,
@@ -33,4 +41,12 @@ export const rootReducers = combineReducers({
   dailyProgram: DailyProgramReducer,
   personel: PersonelReducer,
   responsable: ResponsableReducer,
+  sante_responsable: SanteResponsableReducer,
+  tonokira_daily: TonokiraDailyReducer,
+  homonorie: HomonorieReducer,
+  homonorie_responsable: HomonorieResponsableReducer,
+  librairy: LibrairyReducer,
+  librairy_responsable: LibrairyResponsableReducer,
+  book: BookReducer,
+  formation: FormationReducer,
 });

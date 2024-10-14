@@ -21,6 +21,7 @@ interface DataModel {
   birthDate: string;
   intergationDate: string;
   ecoleId: number | null;
+  endDate: string;
 }
 
 const Create = () => {
@@ -34,6 +35,7 @@ const Create = () => {
     birthDate: "",
     intergationDate: "",
     ecoleId: null,
+    endDate: ""
   });
   const [ecole, setEcole] = useState<EcoleCathesiste[]>([]);
 
@@ -57,6 +59,7 @@ const Create = () => {
       birthDate: data.birthDate,
       intergationDate: data.intergationDate,
       ecoleId: data.ecoleId ? +data.ecoleId : null,
+      endDate: data.endDate
     })
       .then((response) => {
         if (response?.status === 200) {
@@ -66,6 +69,7 @@ const Create = () => {
             birthDate: "",
             intergationDate: "",
             ecoleId: null,
+            endDate: ''
           });
           toast({ title: "Modification réussi" });
           setIsloading(false);
@@ -168,6 +172,16 @@ const Create = () => {
             placeholder="Date d'integration"
             value={moment(data.intergationDate).format("YYYY-MM-DD")}
             onChange={(e) => onChange({ intergationDate: e?.target?.value })}
+          />
+        </div>
+        <div className="mb-2">
+          <label htmlFor="endDate">Fin de formation</label>
+          <Input
+            id="endDate"
+            type="date"
+            placeholder="Fin de formation"
+            value={moment(data.endDate).format("YYYY-MM-DD")}
+            onChange={(e) => onChange({ endDate: e?.target?.value })}
           />
         </div>
         <Button type="button" className="btn-theme my-5" onClick={handleSend}>

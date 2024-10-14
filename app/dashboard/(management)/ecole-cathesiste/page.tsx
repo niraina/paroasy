@@ -70,7 +70,7 @@ const EtablisementPage = () => {
   };
   return (
     <DashboardLayout>
-      <h1 className="mt-2 text-[18px] uppercase">Ecole cathesiste</h1>
+      <h1 className="mt-2 text-[18px] uppercase">Centre catheseutique</h1>
       <div className="px-2 py-2">
         <Button
           className="btn-theme my-5"

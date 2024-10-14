@@ -6,16 +6,16 @@ import { jwtVerify } from "jose";
 export const POST = async (req: NextRequest) => {
   const token = req.cookies.get("token")?.value;
 
-  // if (!token) {
-  //   return NextResponse.json({
-  //     message: "Unauthorized",
-  //     status: 401,
-  //   });
-  // }
+  if (!token) {
+    return NextResponse.json({
+      message: "Unauthorized",
+      status: 401,
+    });
+  }
 
   try {
-    // const secret = new TextEncoder().encode(process.env.JWT_SECRET);
-    // await jwtVerify(token, secret);
+    const secret = new TextEncoder().encode(process.env.JWT_SECRET);
+    await jwtVerify(token, secret);
     const {
       name,
       region,

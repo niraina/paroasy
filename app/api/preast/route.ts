@@ -48,6 +48,7 @@ export const POST = async (req: NextRequest) => {
         status: body?.status as string,
         birthDate: new Date(body?.birthDate as string),
         egliseId: Number(body?.egliseId),
+        isResponsable: body?.isResponsable as any,
         thumbnail: "/uploads/preast/" + uniqueName,
       },
       include: {
@@ -62,7 +63,7 @@ export const POST = async (req: NextRequest) => {
   } catch (error) {
     console.error("Error creating preast:", error);
     return NextResponse.json({
-      message: "Error uploading file",
+      message: "Error uploading file" + error,
       error: error,
       status: 400,
     });
@@ -298,6 +299,7 @@ export const PUT = async (req: NextRequest) => {
         birthDate: new Date(body?.birthDate as string),
         ...(file && { thumbnail: "/uploads/preast/" + uniqueName }),
         egliseId: Number(body?.egliseId),
+        isResponsable: body?.isResponsable as any,
       },
       include: {
         eglise: true, // Include the related Eglise in the response

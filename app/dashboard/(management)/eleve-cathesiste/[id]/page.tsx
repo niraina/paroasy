@@ -84,6 +84,12 @@ const Show = () => {
               </TableCell>
             </TableRow>
             <TableRow>
+              <TableCell className="font-medium">Fin de formation</TableCell>
+              <TableCell className="font-medium">
+                {data?.endDate ? moment(data?.endDate).format("DD/MM/YYYY") : ""}
+              </TableCell>
+            </TableRow>
+            <TableRow>
               <TableCell className="font-medium">Eglise</TableCell>
               <TableCell className="font-medium">
                 {ecole?.eglise?.name}

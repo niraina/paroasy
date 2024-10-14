@@ -23,6 +23,7 @@ import Loading from "./shared/components/Loading";
 import { fetchArticle } from "./dashboard/(siteweb)/article/core/actions";
 import ListCount from "./shared/components/showcase/ListCount";
 import Actuality from "./(home)/actuality";
+import ResponsableHome from "./(home)/responsable";
 
 export default function Home() {
   const articles = useResponseDataArticle();
@@ -113,63 +114,10 @@ export default function Home() {
       )}
       <div className="container !mb-10">
         <ListCount />
-        <div className="hidden">
           <h2 className="text-[28px] text-center py-5">Les Résponsables</h2>
-          <div className="my-5 flex flex-wrap">
-            <div className="w-full md:w-[25%]">
-              <div className="mx-auto max-w-[250px] mb-5">
-                <img
-                  src="/img/azer.png"
-                  alt=""
-                  className="text-center mx-auto max-w-[200px] h-[200px] w-full object-cover rounded-[50%] border-2 dark:border-[#ffe009] border-[#22364f]"
-                />
-                <h2 className="text-center text-[18px] font-bold">
-                  Père Jhon RANDRIA
-                </h2>
-                <p className="italic text-center">Président</p>
-              </div>
-            </div>
-            <div className="w-full md:w-[25%]">
-              <div className="mx-auto max-w-[250px] mb-5">
-                <img
-                  src="/img/azer.png"
-                  alt=""
-                  className="text-center mx-auto max-w-[200px] h-[200px] w-full object-cover rounded-[50%] border-2 dark:border-[#ffe009] border-[#22364f]"
-                />
-                <h2 className="text-center text-[18px] font-bold">
-                  Père Jean Marc RAKOTO
-                </h2>
-                <p className="italic text-center">Résponsable</p>
-              </div>
-            </div>
-            <div className="w-full md:w-[25%]">
-              <div className="mx-auto max-w-[250px] mb-5">
-                <img
-                  src="/img/azer.png"
-                  alt=""
-                  className="text-center mx-auto max-w-[200px] h-[200px] w-full object-cover rounded-[50%] border-2 dark:border-[#ffe009] border-[#22364f]"
-                />
-                <h2 className="text-center text-[18px] font-bold">
-                  Mr Richard MANANA
-                </h2>
-                <p className="italic text-center">Membre de bureau</p>
-              </div>
-            </div>
-            <div className="w-full md:w-[25%]">
-              <div className="mx-auto max-w-[250px] mb-5">
-                <img
-                  src="/img/azer.png"
-                  alt=""
-                  className="text-center mx-auto max-w-[200px] h-[200px] w-full object-cover rounded-[50%] border-2 dark:border-[#ffe009] border-[#22364f]"
-                />
-                <h2 className="text-center text-[18px] font-bold">
-                  Mr Miary RALAY
-                </h2>
-                <p className="italic text-center">Membre de bureau</p>
-              </div>
-            </div>
+          <div className="my-5 flex flex-wrap w-full">
+            <ResponsableHome />
           </div>
-        </div>
         <Actuality />
       </div>
     </div>

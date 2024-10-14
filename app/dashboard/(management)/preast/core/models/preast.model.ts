@@ -20,6 +20,7 @@ export type Preast = {
   birthDate: string;
   egliseId: number;
   eglise?: Eglise;
+  isResponsable?: string;
 };
 
 export type RequestPreast = {

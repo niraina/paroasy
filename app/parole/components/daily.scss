@@ -1,0 +1,20 @@
+.daily {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 28px;
+  }
+
+  ul {
+    list-style: circle;
+    padding-left: 16px;
+
+    li {
+      margin-left: 6px;
+    }
+  }
+}

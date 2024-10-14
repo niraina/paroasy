@@ -67,12 +67,20 @@ const EleveCathesistePage = () => {
     <DashboardLayout>
       <h1 className="mt-2 text-[18px] uppercase">Centre de santé</h1>
       <div className="px-2 py-2">
-        <Button
-          className="btn-theme my-5"
-          onClick={() => router.push("sante/create")}
-        >
-          Ajouter
-        </Button>
+        <div className="flex gap-3">
+          <Button
+            className="btn-theme my-5"
+            onClick={() => router.push("sante/create")}
+          >
+            Ajouter
+          </Button>
+          <Button
+            className="btn-theme my-5"
+            onClick={() => router.push("sante/responsable")}
+          >
+            Ajouter responsable
+          </Button>
+        </div>
         <Input
           onChange={(e) => handleSearch(e)}
           className="my-5 w-[200px] rounded-[5px]"
@@ -87,6 +95,8 @@ const EleveCathesistePage = () => {
               <TableHead>Région</TableHead>
               <TableHead>District</TableHead>
               <TableHead>Date de visite</TableHead>
+              <TableHead>Congregation</TableHead>
+              <TableHead>Responsable</TableHead>
               <TableHead>Actions</TableHead>
             </TableRow>
           </TableHeader>
@@ -105,6 +115,14 @@ const EleveCathesistePage = () => {
                 </TableCell>
                 <TableCell className="font-medium capitalize">
                   {moment(item?.creationDate).format("DD/MM/YYYY")}
+                </TableCell>
+                <TableCell className="font-medium capitalize">
+                  {item?.congregation}
+                </TableCell>
+                <TableCell className="font-medium capitalize">
+                  {item?.responsable?.fullName
+                    ? item?.responsable?.fullName
+                    : "--"}
                 </TableCell>
                 <TableCell>
                   <div className="flex gap-2">

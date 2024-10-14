@@ -102,6 +102,7 @@ model Preast {
   egliseId        Int
   eglise          Eglise            @relation(fields: [egliseId], references: [id])
   ecoleCathesiste EcoleCathesiste[]
+  isResponsable   String
 }
 
 // diosezy
@@ -115,16 +116,28 @@ model Eglise {
   homonorie       Homonorie[]
   preast          Preast[]
   ecoleCathesiste EcoleCathesiste[]
+  sante           Sante[]
 }
 
 model Homonorie {
-  id          Int    @id @default(autoincrement())
+  id          Int                    @id @default(autoincrement())
   name        String
-  responsable String
-  nbZoky      Int
-  nbZandry    Int
+  membre      Int
+  nbZoky      Int?
+  nbZandry    Int?
   egliseId    Int
-  eglise      Eglise @relation(fields: [egliseId], references: [id])
+  eglise      Eglise                 @relation(fields: [egliseId], references: [id])
+  responsable ResponsableHomonorie[]
+}
+
+model ResponsableHomonorie {
+  id          Int       @id @default(autoincrement())
+  fullName    String
+  poste       String
+  tel         String
+  thumbnail   String
+  homonorieId Int
+  homonorie   Homonorie @relation(fields: [homonorieId], references: [id])
 }
 
 model EcoleCathesiste {
@@ -143,8 +156,10 @@ model Eleve {
   lastName        String
   birthDate       String
   intergationDate String
+  endDate         String
   ecoleId         Int
   ecole           EcoleCathesiste @relation(fields: [ecoleId], references: [id])
+  formation       Formation[]
 }
 
 model Etablisement {
@@ -175,12 +190,26 @@ model ResponsableEtablisement {
 }
 
 model Sante {
-  id           Int    @id @default(autoincrement())
-  nomMaladie   String
-  personne     String
-  creationDate String
-  region       String
-  district     String
+  id            Int              @id @default(autoincrement())
+  nomMaladie    String
+  personne      String
+  creationDate  String
+  region        String
+  district      String
+  congregation  String
+  egliseId      Int
+  eglise        Eglise           @relation(fields: [egliseId], references: [id])
+  responsableId Int
+  responsable   ResponsableSante @relation(fields: [responsableId], references: [id])
+}
+
+model ResponsableSante {
+  id        Int     @id @default(autoincrement())
+  fullName  String
+  poste     String
+  thumbnail String
+  tel       Int
+  sante     Sante[]
 }
 
 model DiocesePage {
@@ -211,4 +240,43 @@ model PersonelRadio {
   poste     String
   tel       String
   thumbnail String
+}
+
+model dailyProgramParole {
+  id           Int    @id @default(autoincrement())
+  reference    String
+  content      String @db.Text
+  creationDate String
+}
+
+model Librairy {
+  id          Int                   @id @default(autoincrement())
+  name        String
+  responsable ResponsableLibrairy[]
+  book        Book[]
+}
+
+model ResponsableLibrairy {
+  id         Int      @id @default(autoincrement())
+  fullName   String
+  poste      String
+  thumbnail  String
+  tel        String
+  librairyId Int
+  librairy   Librairy @relation(fields: [librairyId], references: [id])
+}
+
+model Book {
+  id         Int      @id @default(autoincrement())
+  title      String
+  author     String
+  librairyId Int
+  librairy   Librairy @relation(fields: [librairyId], references: [id])
+}
+
+model Formation {
+  id      Int    @id @default(autoincrement())
+  label   String
+  eleveId Int
+  eleve   Eleve  @relation(fields: [eleveId], references: [id])
 }

@@ -28,9 +28,8 @@ const Create = () => {
     egliseId: null,
     status: "",
     birthDate: "",
+    isResponsable: "no",
   });
-
-  console.log("data", data);
 
   const fetchEglise = async () => {
     setIsloading(true);
@@ -63,6 +62,7 @@ const Create = () => {
     formData.append("egliseId", data?.egliseId || "");
     formData.append("about", data?.about);
     formData.append("status", data?.status);
+    formData.append("isResponsable", data?.isResponsable);
     formData.append("file", file);
     formData.append("id", id ? (+id as any) : "");
 
@@ -77,6 +77,7 @@ const Create = () => {
             egliseId: null,
             status: "",
             birthDate: "",
+            isResponsable: "no"
           });
           toast({ title: "Modification réussi" });
           setIsloading(false);
@@ -198,6 +199,20 @@ const Create = () => {
             id="about"
             onChange={(e) => onChange({ about: e?.target?.value })}
           ></Textarea>
+        </div>
+        <div className="mb-2">
+          <label htmlFor="isResponsable">Responsable</label>
+          <select
+            onChange={(e) => onChange({ isResponsable: e?.target?.value })}
+            className="w-full py-2 ps-2 border-[1px] border-[#000] dark:border-[#fff]"
+          >
+              <option value="no" selected={"yes" === data.isResponsable ? false : true}>
+                Non
+              </option>
+              <option value="yes" selected={"yes" === data.isResponsable ? true : false}>
+                Oui
+              </option>
+          </select>
         </div>
         <Button type="button" className="btn-theme my-5" onClick={handleSend}>
           Enregistrer

@@ -90,8 +90,10 @@ const EleveCathesistePage = () => {
               <TableHead>Nom</TableHead>
               <TableHead>Prénom</TableHead>
               <TableHead>Ecole cathesiste</TableHead>
+              <TableHead>Eglise</TableHead>
               <TableHead>Date de naissance</TableHead>
               <TableHead>Date d'intégration</TableHead>
+              <TableHead>Fin de formation</TableHead>
               <TableHead>Actions</TableHead>
             </TableRow>
           </TableHeader>
@@ -100,6 +102,7 @@ const EleveCathesistePage = () => {
               <TableRow key={item.id}>
                 <TableCell className="font-medium">{item?.firstName}</TableCell>
                 <TableCell className="font-medium">{item?.lastName}</TableCell>
+                <TableCell className="font-medium">{item?.ecole?.eglise?.name}</TableCell>
                 <TableCell className="font-medium capitalize">
                   {item?.ecole?.name}
                 </TableCell>
@@ -108,6 +111,9 @@ const EleveCathesistePage = () => {
                 </TableCell>
                 <TableCell className="font-medium capitalize">
                   {moment(item?.intergationDate).format("DD/MM/YYYY")}
+                </TableCell>
+                <TableCell className="font-medium capitalize">
+                  {item?.endDate ? moment(item?.endDate).format("DD/MM/YYYY") : ''}
                 </TableCell>
                 <TableCell>
                   <div className="flex gap-2">

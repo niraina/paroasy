@@ -20,6 +20,7 @@ export type EleveCathesiste = {
   intergationDate: string;
   ecoleId: number;
   ecole: EcoleCathesiste;
+  endDate?: string;
 };
 
 export type RequestEleveCathesiste = {

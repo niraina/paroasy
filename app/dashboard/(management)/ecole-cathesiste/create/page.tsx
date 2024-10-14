@@ -87,7 +87,7 @@ const Create = () => {
   return (
     <DashboardLayout>
       <h1 className="mt-2 text-[18px] uppercase">
-        Nouvelle - Ecole cathesiste
+        Nouvelle - Centre catheseutique
       </h1>
       <form className="my-5">
         <div className="mb-2">

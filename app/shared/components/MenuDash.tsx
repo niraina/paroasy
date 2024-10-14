@@ -83,6 +83,10 @@ const MenuDash: FC = () => {
               title: "Paroles",
             },
             {
+              link: "/dashboard/daily",
+              title: "Programme journalier",
+            },
+            {
               link: "/dashboard/radio/history",
               title: "Historique radio",
             },
@@ -114,7 +118,7 @@ const MenuDash: FC = () => {
             },
             {
               link: "/dashboard/ecole-cathesiste",
-              title: "Ecole cathesiste",
+              title: "Centre catheseutique",
             },
             {
               link: "/dashboard/eleve-cathesiste",
@@ -122,7 +126,23 @@ const MenuDash: FC = () => {
             },
             {
               link: "/dashboard/sante",
-              title: "Centre de santé",
+              title: "CDS",
+            },
+            {
+              link: "/dashboard/association",
+              title: "Association",
+            },
+            {
+              link: "/dashboard/librairy",
+              title: "Librairie",
+            },
+            {
+              link: "/dashboard/librairy/book",
+              title: "Livres",
+            },
+            {
+              link: "/dashboard/formation",
+              title: "Formations",
             },
           ]}
         />

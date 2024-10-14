@@ -20,6 +20,7 @@ const Create = () => {
     egliseId: null,
     status: "",
     birthDate: "",
+    isResponsable: "no"
   });
   const [file, setFile] = useState<string>("");
   const [isLoading, setIsloading] = useState<boolean>(false);
@@ -65,6 +66,7 @@ const Create = () => {
       });
       return;
     }
+
     const formData = new FormData();
     formData.append("firstName", data?.firstName);
     formData.append("lastName", data?.lastName);
@@ -72,12 +74,13 @@ const Create = () => {
     formData.append("egliseId", data?.egliseId);
     formData.append("about", data?.about);
     formData.append("status", data?.status);
+    formData.append("isResponsable", data?.isResponsable);
     formData.append("file", file);
 
     setIsloading(true);
     await postPreast(formData)
       .then((response) => {
-        if (response?.status === 200 || response?.status === 201) {
+        if (response?.status === 201 || response?.status === 200) {
           setData({
             firstName: "",
             lastName: "",
@@ -85,6 +88,7 @@ const Create = () => {
             egliseId: null,
             status: "",
             birthDate: "",
+            isResponsable: "no",
           });
           toast({ title: "Enregistrement réussi" });
           router.push("/dashboard/preast/");
@@ -173,6 +177,20 @@ const Create = () => {
             id="about"
             onChange={(e) => onChange({ about: e?.target?.value })}
           ></Textarea>
+        </div>
+        <div className="mb-2">
+          <label htmlFor="isResponsable">Responsable</label>
+          <select
+            onChange={(e) => onChange({ isResponsable: e?.target?.value })}
+            className="w-full py-2 ps-2 border-[1px] border-[#000] dark:border-[#fff]"
+          >
+              <option value="no">
+                Non
+              </option>
+              <option value="yes">
+                Oui
+              </option>
+          </select>
         </div>
         <Button type="button" className="btn-theme my-5" onClick={handleSend}>
           Enregistrer

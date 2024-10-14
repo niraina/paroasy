@@ -15,6 +15,7 @@ interface DataModel {
   birthDate: string;
   intergationDate: string;
   ecoleId: number | null;
+  endDate: string;
 }
 const Create = () => {
   const router = useRouter();
@@ -24,6 +25,7 @@ const Create = () => {
     birthDate: "",
     intergationDate: "",
     ecoleId: null,
+    endDate: ""
   });
   const [isLoading, setIsloading] = useState<boolean>(false);
   const { toast } = useToast();
@@ -47,7 +49,8 @@ const Create = () => {
       !data.lastName ||
       !data.birthDate ||
       !data.intergationDate ||
-      !data.ecoleId
+      !data.ecoleId ||
+      !data.endDate
     ) {
       toast({
         variant: "destructive",
@@ -62,6 +65,7 @@ const Create = () => {
       birthDate: data.birthDate,
       intergationDate: data.intergationDate,
       ecoleId: +data.ecoleId,
+      endDate: data.endDate
     })
       .then((response) => {
         if (response?.status === 200 || response?.status === 201) {
@@ -71,6 +75,7 @@ const Create = () => {
             birthDate: "",
             intergationDate: "",
             ecoleId: null,
+            endDate: ""
           });
           toast({ title: "Enregistrement réussi" });
           router.push("/dashboard/eleve-cathesiste/");
@@ -144,6 +149,16 @@ const Create = () => {
             placeholder="Date d'integration"
             value={data.intergationDate}
             onChange={(e) => onChange({ intergationDate: e?.target?.value })}
+          />
+        </div>
+        <div className="mb-2">
+          <label htmlFor="endDate">Fin de formation</label>
+          <Input
+            id="endDate"
+            type="date"
+            placeholder="Fin de formation"
+            value={data.endDate}
+            onChange={(e) => onChange({ endDate: e?.target?.value })}
           />
         </div>
         <Button type="button" className="btn-theme my-5" onClick={handleSend}>

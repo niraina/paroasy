@@ -6,18 +6,20 @@ import { useRouter, useParams } from "next/navigation";
 import { useToast } from "@/components/ui/use-toast";
 import Loading from "@/app/shared/components/Loading";
 import { Input } from "@/components/ui/input";
-import { EcoleCathesiste } from "../../../ecole-cathesiste/core/models/ecole-cathesiste.model";
-import { getAllEcoleCathesiste } from "../../../ecole-cathesiste/core/requests/_get_request";
 import moment from "moment";
 import { REGION } from "@/app/shared/constant/region";
 import { putSante } from "../../core/requests/_post_request";
 import { getSante } from "../../core/requests/_get_request";
+import { Eglise } from "../../../eglise/core/models/eglise.model";
+import { getAllParoasy } from "../../../eglise/core/requests/_get_request";
 interface DataModel {
   nomMaladie: string;
   personne: string;
   creationDate: string;
   region: string;
   district: string;
+  egliseId: number | null;
+  congregation: string;
 }
 
 const Create = () => {
@@ -33,7 +35,18 @@ const Create = () => {
     creationDate: moment(now).format("YYYY-MM-DD"),
     region: REGION[0].value,
     district: "",
+    egliseId: null,
+    congregation: "",
   });
+
+  const [eglise, setEglise] = useState<Eglise[]>([]);
+  const fetchEglise = async () => {
+    const response = await getAllParoasy({ itemsPerPage: 1000 });
+    setEglise(response.data.data);
+  };
+  useEffect(() => {
+    fetchEglise();
+  }, []);
 
   const onChange = (v: any) => {
     setData((prev: any) => ({ ...prev, ...v }));
@@ -47,6 +60,8 @@ const Create = () => {
       creationDate: data.creationDate,
       region: data.region,
       district: data.district,
+      egliseId: data.egliseId && +data.egliseId,
+      congregation: data.congregation,
     })
       .then((response) => {
         if (response?.status === 200) {
@@ -56,6 +71,8 @@ const Create = () => {
             creationDate: "",
             region: REGION[0].value,
             district: "",
+            egliseId: null,
+            congregation: "",
           });
           toast({ title: "Modification réussi" });
           setIsloading(false);
@@ -99,16 +116,14 @@ const Create = () => {
   }, [id]);
   return (
     <DashboardLayout>
-      <h1 className="mt-2 text-[18px] uppercase">
-        Nouvelle - Eleve cathesiste
-      </h1>
+      <h1 className="mt-2 text-[18px] uppercase">Modification - CDS</h1>
       <form className="my-5">
         <div className="mb-2">
           <label htmlFor="nomMaladie">Nom de la maladie</label>
           <Input
             id="nomMaladie"
             type="text"
-            placeholder="Nom de la maladie"
+            placeholder="Nmodif cdsom de la maladie"
             value={data.nomMaladie}
             onChange={(e) => onChange({ nomMaladie: e?.target?.value })}
           />
@@ -148,6 +163,33 @@ const Create = () => {
             placeholder="District"
             value={data.district}
             onChange={(e) => onChange({ district: e?.target?.value })}
+          />
+        </div>
+        <div className="mb-2">
+          <label htmlFor="type">Eglise</label>
+          <select
+            onChange={(e) => onChange({ egliseId: e?.target?.value })}
+            className="w-full py-2 ps-2 border-[1px] border-[#000] dark:border-[#fff]"
+          >
+            {eglise.map((item: Eglise, index: number) => (
+              <option
+                key={item.id}
+                value={item.id}
+                selected={item.id === data.egliseId}
+              >
+                {item.name}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div className="mb-2">
+          <label htmlFor="congregation">Congregation</label>
+          <Input
+            id="congregation"
+            type="text"
+            placeholder="congregation"
+            value={data.congregation}
+            onChange={(e) => onChange({ congregation: e?.target?.value })}
           />
         </div>
         <Button type="button" className="btn-theme my-5" onClick={handleSend}>

@@ -16,11 +16,28 @@ export const POST = async (req: NextRequest) => {
   try {
     const secret = new TextEncoder().encode(process.env.JWT_SECRET);
     await jwtVerify(token, secret);
-    const { nomMaladie, personne, creationDate, region, district } =
-      await req.json();
+    const {
+      nomMaladie,
+      personne,
+      creationDate,
+      region,
+      district,
+      egliseId,
+      congregation,
+      responsableId,
+    } = await req.json();
 
     // Validation basique
-    if (!nomMaladie || !personne || !creationDate || !region || !district) {
+    if (
+      !nomMaladie ||
+      !personne ||
+      !creationDate ||
+      !region ||
+      !district ||
+      !egliseId ||
+      !congregation ||
+      !responsableId
+    ) {
       return NextResponse.json({ error: "Champ requis" }, { status: 400 });
     }
 
@@ -32,6 +49,9 @@ export const POST = async (req: NextRequest) => {
         creationDate,
         region,
         district,
+        egliseId,
+        congregation,
+        responsableId,
       },
     });
 
@@ -61,6 +81,10 @@ export const GET = async (req: NextRequest) => {
     try {
       const datas = await prisma.sante.findUnique({
         where: { id: Number(id) },
+        include: {
+          responsable: true, // Inclusion du responsable
+          eglise: true,
+        },
       });
 
       if (datas) {
@@ -103,6 +127,10 @@ export const GET = async (req: NextRequest) => {
             // mode: 'insensitive'
           },
         },
+        include: {
+          responsable: true, // Inclusion du responsable
+          eglise: true,
+        },
         skip: offset,
         take: itemsPerPage,
       });
@@ -131,6 +159,10 @@ export const GET = async (req: NextRequest) => {
       const datas = await prisma.sante.findMany({
         skip: offset,
         take: itemsPerPage,
+        include: {
+          responsable: true, // Inclusion du responsable
+          eglise: true,
+        },
       });
       return NextResponse.json({
         success: true,
@@ -143,7 +175,7 @@ export const GET = async (req: NextRequest) => {
     } catch (error) {
       console.error("Error fetching data:", error);
       return NextResponse.json({
-        message: "Error fetching data",
+        message: "Error fetching data" + error,
         error: error,
         status: 400,
       });
@@ -207,8 +239,16 @@ export const DELETE = async (req: NextRequest) => {
 export const PUT = async (req: NextRequest) => {
   const { searchParams } = new URL(req.url);
   const id = searchParams.get("id");
-  const { nomMaladie, personne, creationDate, region, district } =
-    await req.json();
+  const {
+    nomMaladie,
+    personne,
+    creationDate,
+    region,
+    district,
+    egliseId,
+    congregation,
+    responsableId,
+  } = await req.json();
   const token = req.cookies.get("token")?.value;
 
   if (!token) {
@@ -225,7 +265,16 @@ export const PUT = async (req: NextRequest) => {
       status: 400,
     });
   }
-  if (!nomMaladie || !personne || !creationDate || !region || !district) {
+  if (
+    !nomMaladie ||
+    !personne ||
+    !creationDate ||
+    !region ||
+    !district ||
+    !egliseId ||
+    !congregation ||
+    !responsableId
+  ) {
     return NextResponse.json({ error: "Champ requis" }, { status: 400 });
   }
 
@@ -240,6 +289,9 @@ export const PUT = async (req: NextRequest) => {
         creationDate: creationDate,
         region: region,
         district: district,
+        egliseId: egliseId,
+        congregation: congregation,
+        responsableId: responsableId,
       },
     });
 
