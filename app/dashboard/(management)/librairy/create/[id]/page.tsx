@@ -6,13 +6,8 @@ import { useRouter, useParams } from "next/navigation";
 import { useToast } from "@/components/ui/use-toast";
 import Loading from "@/app/shared/components/Loading";
 import { Input } from "@/components/ui/input";
-import { Eglise } from "../../../eglise/core/models/eglise.model";
-import { getAllParoasy } from "../../../eglise/core/requests/_get_request";
 import { createFormData } from "@/app/shared/usecase/createFormData";
-import {
-  putLibrairy,
-  putLibrairyResponsable,
-} from "../../core/requests/_post_request";
+import { putLibrairy, putLibrairyResponsable } from "../../core/requests/_post_request";
 import { getLibrairy } from "../../core/requests/_get_request";
 interface DataModel {
   name: string;
