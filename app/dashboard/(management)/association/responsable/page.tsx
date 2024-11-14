@@ -12,19 +12,16 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { Eye, Pencil, Trash2 } from "lucide-react";
+import { Pencil, Trash2 } from "lucide-react";
 import { PaginationPage } from "@/app/shared/components/Pagination";
 import Loading from "@/app/shared/components/Loading";
 import { toast } from "@/components/ui/use-toast";
-import {
-  useResponseDataSanteResponsable,
-  useResponseSanteResponsableData,
-} from "../lib";
-import { fetchSanteResponsable } from "../core/actions";
-import { deleteSanteResponsable } from "../core/requests/_del_request";
-import { Responsable } from "../core/models/responsable.model";
 import Image from "next/image";
 import DashboardLayout from "@/app/dashboard/page";
+import { useResponseDataSanteResponsable, useResponseSanteResponsableData } from "../../sante/lib";
+import { fetchSanteResponsable } from "../../sante/core/actions";
+import { deleteSanteResponsable } from "../../sante/core/requests/_del_request";
+import { Responsable } from "../../sante/core/models/responsable.model";
 
 const EleveCathesistePage = () => {
   const datas = useResponseDataSanteResponsable();
