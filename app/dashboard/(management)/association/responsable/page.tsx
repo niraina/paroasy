@@ -27,7 +27,7 @@ const EleveCathesistePage = () => {
   const datas = useResponseDataSanteResponsable();
   const { request, isLoading, response } = useResponseSanteResponsableData();
   const dispatch: AppDispatch = useDispatch();
-  const [currentPage, setCurrentPage] = useState<number>(
+  const [currentPage, setCurrentPage] = useState<any>(
     response.currentPage || 1
   );
   const router = useRouter();
@@ -37,11 +37,11 @@ const EleveCathesistePage = () => {
     dispatch(fetchSanteResponsable({ ...request, page: currentPage }));
   }, [dispatch, request, currentPage]);
 
-  const handlePageChange = (page: number) => {
+  const handlePageChange = (page: any) => {
     setCurrentPage(page);
   };
 
-  const handleDelete = async (id: number) => {
+  const handleDelete = async (id: any) => {
     await deleteSanteResponsable(+id)
       .then((response) => {
         if (response?.status === 200) {
