@@ -11,7 +11,7 @@ import Wygywyg from "@/app/shared/components/Wygywyg";
 import { putActus } from "../../core/requests/_post_request";
 import { getArticle } from "../../core/requests/_get_request";
 
-const Create = () => {
+const CreatePostId = () => {
   const router = useRouter();
   const { id } = useParams();
   const [data, setData] = useState({
@@ -152,4 +152,4 @@ const Create = () => {
   );
 };
 
-export default Create;
+export default CreatePostId;

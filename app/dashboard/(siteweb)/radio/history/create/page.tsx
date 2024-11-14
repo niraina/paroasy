@@ -8,7 +8,7 @@ import Loading from "@/app/shared/components/Loading";
 import Wygywyg from "@/app/shared/components/Wygywyg";
 import { postRadio } from "../core/requests/_post_request";
 
-const Create = () => {
+const CreateHistory = () => {
   const router = useRouter();
   const [isLoading, setIsloading] = useState<boolean>(false);
   const { toast } = useToast();
@@ -63,4 +63,4 @@ const Create = () => {
   );
 };
 
-export default Create;
+export default CreateHistory;

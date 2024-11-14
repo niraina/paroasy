@@ -11,7 +11,7 @@ import { postHome, putHome } from "../../../home/core/requests/_post_request";
 import { getTonokira } from "../../core/requests/_get_request";
 import { putTonokira } from "../../core/requests/_post_request";
 
-const Create = () => {
+const CreateTonokiraId = () => {
   const router = useRouter();
   const { id } = useParams();
   const [title, setTitle] = useState("");
@@ -114,4 +114,4 @@ const Create = () => {
   );
 };
 
-export default Create;
+export default CreateTonokiraId;

@@ -8,7 +8,7 @@ import { useToast } from "@/components/ui/use-toast";
 import Loading from "@/app/shared/components/Loading";
 import { postPersonnel } from "../core/requests/_post_request";
 
-const Create = () => {
+const CreatePersonel = () => {
   const router = useRouter();
   const [data, setData] = useState({
     fullName: "",
@@ -118,4 +118,4 @@ const Create = () => {
   );
 };
 
-export default Create;
+export default CreatePersonel;

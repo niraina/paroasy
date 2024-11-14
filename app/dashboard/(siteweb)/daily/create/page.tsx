@@ -9,7 +9,7 @@ import Loading from "@/app/shared/components/Loading";
 import Wygywyg from "@/app/shared/components/Wygywyg";
 import { postTonokiraDaily } from "../core/requests/_post_request";
 
-const Create = () => {
+const CreateDaily = () => {
   const router = useRouter();
   const [data, setData] = useState<any>({
     reference: "",
@@ -93,4 +93,4 @@ const Create = () => {
   );
 };
 
-export default Create;
+export default CreateDaily;

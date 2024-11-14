@@ -9,7 +9,7 @@ import Wygywyg from "@/app/shared/components/Wygywyg";
 import { getDiocesePage } from "../../core/requests/_get_request";
 import { putPageDiocese } from "../../core/requests/_post_request";
 
-const Create = () => {
+const CreateDioceseId = () => {
   const router = useRouter();
   const { id } = useParams();
   const [isLoading, setIsloading] = useState<boolean>(false);
@@ -92,4 +92,4 @@ const Create = () => {
   );
 };
 
-export default Create;
+export default CreateDioceseId;

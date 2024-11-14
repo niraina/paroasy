@@ -10,7 +10,7 @@ import Wygywyg from "@/app/shared/components/Wygywyg";
 import { putTonokiraDaily } from "../../core/requests/_post_request";
 import { getTonokiraDaily } from "../../core/requests/_get_request";
 
-const Create = () => {
+const CreateDailyId = () => {
   const { id } = useParams();
   const router = useRouter();
   const [data, setData] = useState<any>({
@@ -121,4 +121,4 @@ const Create = () => {
   );
 };
 
-export default Create;
+export default CreateDailyId;

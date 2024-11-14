@@ -11,7 +11,7 @@ import { useToast } from "@/components/ui/use-toast";
 import Loading from "@/app/shared/components/Loading";
 import Wygywyg from "@/app/shared/components/Wygywyg";
 
-const Create = () => {
+const CreateHome = () => {
   const router = useRouter();
   const [data, setData] = useState({
     title: "",
@@ -121,4 +121,4 @@ const Create = () => {
   );
 };
 
-export default Create;
+export default CreateHome;

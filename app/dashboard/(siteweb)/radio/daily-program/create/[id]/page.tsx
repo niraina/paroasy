@@ -11,7 +11,7 @@ import { getDailyProgram } from "../../core/requests/_get_request";
 import moment from "moment";
 import { Input } from "@/components/ui/input";
 
-const Create = () => {
+const CreateDailyProgramId = () => {
   const router = useRouter();
   const { id } = useParams();
   const [isLoading, setIsloading] = useState<boolean>(false);
@@ -112,4 +112,4 @@ const Create = () => {
   );
 };
 
-export default Create;
+export default CreateDailyProgramId;

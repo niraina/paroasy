@@ -9,7 +9,7 @@ import Wygywyg from "@/app/shared/components/Wygywyg";
 import { putRadio } from "../../core/requests/_post_request";
 import { getRadio } from "../../core/requests/_get_request";
 
-const Create = () => {
+const CreateHistoryId = () => {
   const router = useRouter();
   const { id } = useParams();
   const [isLoading, setIsloading] = useState<boolean>(false);
@@ -92,4 +92,4 @@ const Create = () => {
   );
 };
 
-export default Create;
+export default CreateHistoryId;

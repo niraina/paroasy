@@ -9,7 +9,7 @@ import { Input } from "@/components/ui/input";
 import { putPersonnel } from "../../core/requests/_post_request";
 import { getPersonel } from "../../core/requests/_get_request";
 
-const Create = () => {
+const CreatePersonelId = () => {
   const router = useRouter();
   const { id } = useParams();
   const [file, setFile] = useState<string>("");
@@ -138,4 +138,4 @@ const Create = () => {
   );
 };
 
-export default Create;
+export default CreatePersonelId;
