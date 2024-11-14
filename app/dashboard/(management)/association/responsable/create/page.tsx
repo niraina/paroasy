@@ -6,7 +6,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useToast } from "@/components/ui/use-toast";
 import Loading from "@/app/shared/components/Loading";
-import { postSanteResponsable } from "../../core/requests/_post_request";
+import { postSanteResponsable } from "../../../sante/core/requests/_post_request";
 
 const Create = () => {
   const router = useRouter();
