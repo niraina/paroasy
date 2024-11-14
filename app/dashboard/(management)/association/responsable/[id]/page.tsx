@@ -6,8 +6,8 @@ import { useRouter, useParams } from "next/navigation";
 import { useToast } from "@/components/ui/use-toast";
 import Loading from "@/app/shared/components/Loading";
 import { Input } from "@/components/ui/input";
-import { putSanteResponsable } from "../../core/requests/_post_request";
-import { getSanteResponsable } from "../../core/requests/_get_request";
+import { getSanteResponsable } from "../../../sante/core/requests/_get_request";
+import { putSanteResponsable } from "../../../sante/core/requests/_post_request";
 
 const Create = () => {
   const router = useRouter();

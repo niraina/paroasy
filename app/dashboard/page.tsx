@@ -1,11 +1,7 @@
-import React from 'react';
 import MenuDash from '../shared/components/MenuDash';
 import { PopLogOut } from '../shared/components/PopLogOut';
 
-const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
-  const handleLogout = () => {
-    console.log("first");
-  };
+const DashboardLayout = ({ children }: any) => {
   return (
     <div className="flex">
       <div className="w-64">
