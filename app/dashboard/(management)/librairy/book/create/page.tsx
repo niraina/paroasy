@@ -15,7 +15,7 @@ interface DataModel {
   author: string;
   librairyId: number | null;
 }
-const Create = () => {
+const CreateBook = () => {
   const router = useRouter();
 
   const [data, setData] = useState<DataModel>({
@@ -125,4 +125,4 @@ const Create = () => {
   );
 };
 
-export default Create;
+export default CreateBook;

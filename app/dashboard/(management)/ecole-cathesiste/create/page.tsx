@@ -16,7 +16,7 @@ interface DataModel {
   egliseId: number | null;
   preastId: number | null;
 }
-const Create = () => {
+const CreateEcoleCathesiste = () => {
   const router = useRouter();
   const [data, setData] = useState<DataModel>({
     name: "",
@@ -135,4 +135,4 @@ const Create = () => {
   );
 };
 
-export default Create;
+export default CreateEcoleCathesiste;

@@ -27,7 +27,7 @@ import { deleteTonokiraDaily } from "./core/requests/_del_request";
 import { Daily } from "./core/models/home.model";
 import moment from "moment";
 
-const HomeDashPage = () => {
+const DailyPage = () => {
   const homes = useResponseDataTonokiraDaily();
   const { request, isLoading, response } = useResponseTonokiraDailyData();
   const dispatch: AppDispatch = useDispatch();
@@ -130,4 +130,4 @@ const HomeDashPage = () => {
   );
 };
 
-export default HomeDashPage;
+export default DailyPage;

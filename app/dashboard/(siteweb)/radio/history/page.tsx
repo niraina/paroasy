@@ -18,7 +18,7 @@ import { Pencil } from "lucide-react";
 import { useResponseDataRadio, useResponseRadioData } from "./lib";
 import { fetchRadio } from "./core/actions";
 
-const Radio = () => {
+const HistoryPage = () => {
   const data = useResponseDataRadio();
   const { request, isLoading } = useResponseRadioData();
   const dispatch: AppDispatch = useDispatch();
@@ -74,4 +74,4 @@ const Radio = () => {
   );
 };
 
-export default Radio;
+export default HistoryPage;

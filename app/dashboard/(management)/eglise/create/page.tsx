@@ -10,7 +10,7 @@ import { postParoasy } from "../core/requests/_post_request";
 import { Eglise } from "../core/models/eglise.model";
 import { REGION } from "@/app/shared/constant/region";
 
-const Create = () => {
+const CreateEglise = () => {
   const router = useRouter();
   const [data, setData] = useState<Eglise>({
     name: "",
@@ -108,4 +108,4 @@ const Create = () => {
   );
 };
 
-export default Create;
+export default CreateEglise;

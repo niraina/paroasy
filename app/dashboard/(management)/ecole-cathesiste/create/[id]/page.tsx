@@ -18,7 +18,7 @@ interface DataModel {
   preastId: number | null;
 }
 
-const Create = () => {
+const CreateEcoleCathesisteById = () => {
   const router = useRouter();
   const { id } = useParams();
   const [isLoading, setIsloading] = useState<boolean>(false);
@@ -164,4 +164,4 @@ const Create = () => {
   );
 };
 
-export default Create;
+export default CreateEcoleCathesisteById;

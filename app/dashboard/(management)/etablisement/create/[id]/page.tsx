@@ -15,7 +15,7 @@ import {
 } from "../../core/requests/_post_request";
 import { getEtablisement } from "../../core/requests/_get_request";
 
-const Create = () => {
+const CreateEtablisementById = () => {
   const router = useRouter();
   const { id } = useParams();
   const [isLoading, setIsloading] = useState<boolean>(false);
@@ -356,4 +356,4 @@ const Create = () => {
   );
 };
 
-export default Create;
+export default CreateEtablisementById;

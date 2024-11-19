@@ -16,7 +16,7 @@ import { ResponsableLibrairy } from "../core/models/responsable.model";
 import Image from "next/image";
 import { Book } from "../core/models/book.model";
 import Link from "next/link";
-const Detail = () => {
+const DetailLibrairy = () => {
   const { id } = useParams();
   const [data, setData] = useState<Librairy>();
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -98,4 +98,4 @@ const Detail = () => {
   );
 };
 
-export default Detail;
+export default DetailLibrairy;

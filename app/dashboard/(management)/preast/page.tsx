@@ -25,7 +25,7 @@ import { Preast } from "./core/models/preast.model";
 import Image from "next/image";
 import moment from "moment";
 
-const EglisePage = () => {
+const PreastPage = () => {
   const datas = useResponseDataPreast();
   const { request, isLoading, response } = useResponsePreastData();
   const dispatch: AppDispatch = useDispatch();
@@ -144,4 +144,4 @@ const EglisePage = () => {
   );
 };
 
-export default EglisePage;
+export default PreastPage;

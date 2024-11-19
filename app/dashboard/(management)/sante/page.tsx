@@ -24,7 +24,7 @@ import { fetchSante } from "./core/actions";
 import { deleteSante } from "./core/requests/_del_request";
 import { Sante } from "./core/models/sante.model";
 
-const EleveCathesistePage = () => {
+const SantePage = () => {
   const datas = useResponseDataSante();
   const { request, isLoading, response } = useResponseSanteData();
   const dispatch: AppDispatch = useDispatch();
@@ -155,4 +155,4 @@ const EleveCathesistePage = () => {
   );
 };
 
-export default EleveCathesistePage;
+export default SantePage;

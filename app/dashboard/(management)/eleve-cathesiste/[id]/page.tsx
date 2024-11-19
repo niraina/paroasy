@@ -13,7 +13,7 @@ import { EcoleCathesiste } from "../../ecole-cathesiste/core/models/ecole-cathes
 import Link from "next/link";
 import Loading from "@/app/shared/components/Loading";
 
-const Show = () => {
+const ShowEleve = () => {
   const { id } = useParams();
   const [data, setData] = useState<EleveCathesiste>();
   const [ecole, setEcole] = useState<EcoleCathesiste>();
@@ -121,4 +121,4 @@ const Show = () => {
   );
 };
 
-export default Show;
+export default ShowEleve;

@@ -18,7 +18,7 @@ import Image from "next/image";
 import { Responsable } from "../core/models/responsable.model";
 import Link from "next/link";
 
-const Show = () => {
+const ShowEtablisement = () => {
   const { id } = useParams();
   const [data, setData] = useState<Etablisement>();
   const [loading, setLoading] = useState<boolean>(false);
@@ -149,4 +149,4 @@ const Show = () => {
   );
 };
 
-export default Show;
+export default ShowEtablisement;

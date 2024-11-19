@@ -22,7 +22,7 @@ interface DataModel {
   congregation: string;
 }
 
-const Create = () => {
+const CreateSanteId = () => {
   const router = useRouter();
   const { id } = useParams();
   const [isLoading, setIsloading] = useState<boolean>(false);
@@ -201,4 +201,4 @@ const Create = () => {
   );
 };
 
-export default Create;
+export default CreateSanteId;

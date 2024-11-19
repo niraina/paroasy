@@ -9,7 +9,7 @@ import { useToast } from "@/components/ui/use-toast";
 import Loading from "@/app/shared/components/Loading";
 import Wygywyg from "@/app/shared/components/Wygywyg";
 import { postActus } from "../core/requests/_post_request";
-const CreatePost = () => {
+const CreatePostItem = () => {
   const router = useRouter();
   const [data, setData] = useState({
     title: "",
@@ -107,4 +107,4 @@ const CreatePost = () => {
   );
 };
 
-export default CreatePost;
+export default CreatePostItem;

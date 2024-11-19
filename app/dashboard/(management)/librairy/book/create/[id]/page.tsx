@@ -1,8 +1,8 @@
 "use client";
-const Page = () => {
+const CreateBookById = () => {
   return (
     <div className="flex gap-2">Lorem ipsum dolor sit amet.</div>
   );
 };
 
-export default Page;
+export default CreateBookById;

@@ -23,7 +23,7 @@ import { Input } from "@/components/ui/input";
 import { deleteTonokira } from "./core/requests/_del_request";
 import { toast } from "@/components/ui/use-toast";
 
-const HomeDashPage = () => {
+const ParolePage = () => {
   const homes = useResponseDataTonokira();
   const { request, isLoading, response } = useResponseTonokiraData();
   const dispatch: AppDispatch = useDispatch();
@@ -120,4 +120,4 @@ const HomeDashPage = () => {
   );
 };
 
-export default HomeDashPage;
+export default ParolePage;

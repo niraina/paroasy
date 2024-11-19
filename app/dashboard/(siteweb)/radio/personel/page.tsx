@@ -24,7 +24,7 @@ import { deletePersonel } from "./core/requests/_del_request";
 import DashboardLayout from "@/app/dashboard/page";
 import { Personel } from "./core/models/personel.model";
 
-const EglisePage = () => {
+const PersonelPage = () => {
   const datas = useResponseDataPersonel();
   const { request, isLoading, response } = useResponsePersonelData();
   const dispatch: AppDispatch = useDispatch();
@@ -130,4 +130,4 @@ const EglisePage = () => {
   );
 };
 
-export default EglisePage;
+export default PersonelPage;

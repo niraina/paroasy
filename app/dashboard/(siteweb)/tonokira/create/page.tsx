@@ -9,7 +9,7 @@ import { useToast } from "@/components/ui/use-toast";
 import Loading from "@/app/shared/components/Loading";
 import Wygywyg from "@/app/shared/components/Wygywyg";
 
-const CreateTonokira = () => {
+const CreateTonokiraPage = () => {
   const router = useRouter();
   const [title, setTitle] = useState("");
   const [isLoading, setIsloading] = useState<boolean>(false);
@@ -87,4 +87,4 @@ const CreateTonokira = () => {
   );
 };
 
-export default CreateTonokira;
+export default CreateTonokiraPage;

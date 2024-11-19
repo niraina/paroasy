@@ -14,7 +14,7 @@ import {
 interface DataModel {
   name: string;
 }
-const Create = () => {
+const CreateLibrairy = () => {
   const router = useRouter();
 
   const [data, setData] = useState<DataModel>({
@@ -161,4 +161,4 @@ const Create = () => {
   );
 };
 
-export default Create;
+export default CreateLibrairy;

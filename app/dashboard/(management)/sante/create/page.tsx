@@ -23,7 +23,7 @@ interface DataModel {
   congregation: string;
   responsableId: number | null;
 }
-const Create = () => {
+const CreateSante = () => {
   const router = useRouter();
   const now = new Date();
 
@@ -209,4 +209,4 @@ const Create = () => {
   );
 };
 
-export default Create;
+export default CreateSante;

@@ -24,7 +24,7 @@ interface DataModel {
   endDate: string;
 }
 
-const Create = () => {
+const CreateEleveCathById = () => {
   const router = useRouter();
   const { id } = useParams();
   const [isLoading, setIsloading] = useState<boolean>(false);
@@ -193,4 +193,4 @@ const Create = () => {
   );
 };
 
-export default Create;
+export default CreateEleveCathById;

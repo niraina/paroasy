@@ -14,7 +14,7 @@ import { getPreast } from "../../core/requests/_get_request";
 import { Textarea } from "@/components/ui/textarea";
 import moment from "moment";
 
-const Create = () => {
+const CreatePreastById = () => {
   const router = useRouter();
   const { id } = useParams();
   const [file, setFile] = useState<string>("");
@@ -223,4 +223,4 @@ const Create = () => {
   );
 };
 
-export default Create;
+export default CreatePreastById;

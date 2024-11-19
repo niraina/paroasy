@@ -13,7 +13,7 @@ interface DataModel {
   name: string;
 }
 
-const Create = () => {
+const CreateLibrairyById = () => {
   const router = useRouter();
   const { id } = useParams();
   const [isLoading, setIsloading] = useState<boolean>(false);
@@ -187,4 +187,4 @@ const Create = () => {
   );
 };
 
-export default Create;
+export default CreateLibrairyById;

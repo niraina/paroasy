@@ -13,7 +13,7 @@ import {
   postResponsable,
 } from "../core/requests/_post_request";
 
-const Create = () => {
+const CreateEtablisement = () => {
   const router = useRouter();
   const [data, setData] = useState<Etablisement>({
     name: "",
@@ -305,4 +305,4 @@ const Create = () => {
   );
 };
 
-export default Create;
+export default CreateEtablisement;

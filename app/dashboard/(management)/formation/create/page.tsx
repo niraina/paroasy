@@ -16,7 +16,7 @@ interface DataModel {
   label: string;
   eleveId: number | null;
 }
-const Create = () => {
+const CreateFormation = () => {
   const router = useRouter();
 
   const [data, setData] = useState<DataModel>({
@@ -114,4 +114,4 @@ const Create = () => {
   );
 };
 
-export default Create;
+export default CreateFormation;

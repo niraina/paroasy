@@ -11,7 +11,7 @@ import { postHome } from "../../home/core/requests/_post_request";
 import Wygywyg from "@/app/shared/components/Wygywyg";
 import { TYPE_PAGE } from "@/app/shared/constant/type-page";
 
-const CreateAccueil = () => {
+const CreatePageAccueil = () => {
   const router = useRouter();
   const [data, setData] = useState({
     title: "",
@@ -110,4 +110,4 @@ const CreateAccueil = () => {
   );
 };
 
-export default CreateAccueil;
+export default CreatePageAccueil;

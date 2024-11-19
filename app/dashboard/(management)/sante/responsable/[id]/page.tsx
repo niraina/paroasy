@@ -9,7 +9,7 @@ import { Input } from "@/components/ui/input";
 import { putSanteResponsable } from "../../core/requests/_post_request";
 import { getSanteResponsable } from "../../core/requests/_get_request";
 
-const Create = () => {
+const DetailResponsable = () => {
   const router = useRouter();
   const { id } = useParams();
   const [isLoading, setIsloading] = useState<boolean>(false);
@@ -139,4 +139,4 @@ const Create = () => {
   );
 };
 
-export default Create;
+export default DetailResponsable;

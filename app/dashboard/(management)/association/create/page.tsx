@@ -20,7 +20,7 @@ interface DataModel {
   nbZandry: number;
   egliseId: number | null;
 }
-const Create = () => {
+const CreateAssociation = () => {
   const router = useRouter();
 
   const [data, setData] = useState<DataModel>({
@@ -237,4 +237,4 @@ const Create = () => {
   );
 };
 
-export default Create;
+export default CreateAssociation;

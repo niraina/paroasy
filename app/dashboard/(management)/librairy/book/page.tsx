@@ -23,7 +23,7 @@ import { deleteBook } from "../core/requests/_del_request";
 import DashboardLayout from "@/app/dashboard/page";
 import { Book } from "../core/models/book.model";
 
-const HomonoriePage = () => {
+const BookPage = () => {
   const datas = useResponseDataBook();
   const { request, isLoading, response } = useResponseBookData();
   const dispatch: AppDispatch = useDispatch();
@@ -124,4 +124,4 @@ const HomonoriePage = () => {
   );
 };
 
-export default HomonoriePage;
+export default BookPage;

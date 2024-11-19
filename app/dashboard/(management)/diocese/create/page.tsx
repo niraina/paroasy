@@ -8,7 +8,7 @@ import { useRouter } from 'next/navigation'
 import { useToast } from '@/components/ui/use-toast'
 import Loading from '@/app/shared/components/Loading'
 
-const Create = () => {
+const CreateDiocese = () => {
     const router = useRouter()
     const [data, setData] = useState({
         name: ""
@@ -60,4 +60,4 @@ const Create = () => {
   )
 }
 
-export default Create
+export default CreateDiocese

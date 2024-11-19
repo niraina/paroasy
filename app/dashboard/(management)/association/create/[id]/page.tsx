@@ -15,7 +15,6 @@ import {
 } from "../../core/requests/_post_request";
 import {
   getHomoronie,
-  getHomoronieResponsable,
 } from "../../core/requests/_get_request";
 import { createFormData } from "@/app/shared/usecase/createFormData";
 interface DataModel {
@@ -26,7 +25,7 @@ interface DataModel {
   egliseId: number | null;
 }
 
-const Create = () => {
+const CreateAssociationById = () => {
   const router = useRouter();
   const { id } = useParams();
   const [isLoading, setIsloading] = useState<boolean>(false);
@@ -263,4 +262,4 @@ const Create = () => {
   );
 };
 
-export default Create;
+export default CreateAssociationById;

@@ -11,7 +11,7 @@ import { getParoasy } from "../../core/requests/_get_request";
 import { putParoasy } from "../../core/requests/_post_request";
 import { Input } from "@/components/ui/input";
 
-const Create = () => {
+const CreateEgliseById = () => {
   const router = useRouter();
   const { id } = useParams();
   const [isLoading, setIsloading] = useState<boolean>(false);
@@ -124,4 +124,4 @@ const Create = () => {
   );
 };
 
-export default Create;
+export default CreateEgliseById;

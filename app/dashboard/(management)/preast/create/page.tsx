@@ -11,7 +11,7 @@ import { Eglise } from "../../eglise/core/models/eglise.model";
 import { getAllParoasy } from "../../eglise/core/requests/_get_request";
 import { Textarea } from "@/components/ui/textarea";
 
-const Create = () => {
+const CreatePreast = () => {
   const router = useRouter();
   const [data, setData] = useState({
     firstName: "",
@@ -201,4 +201,4 @@ const Create = () => {
   );
 };
 
-export default Create;
+export default CreatePreast;

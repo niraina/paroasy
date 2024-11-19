@@ -9,7 +9,7 @@ import { Input } from "@/components/ui/input";
 import { getSanteResponsable } from "../../../sante/core/requests/_get_request";
 import { putSanteResponsable } from "../../../sante/core/requests/_post_request";
 
-const Create = () => {
+const CreateResponsableById = () => {
   const router = useRouter();
   const { id } = useParams();
   const [isLoading, setIsloading] = useState<boolean>(false);
@@ -139,4 +139,4 @@ const Create = () => {
   );
 };
 
-export default Create;
+export default CreateResponsableById;

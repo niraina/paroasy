@@ -1,18 +1,14 @@
 "use client";
 import DashboardLayout from "@/app/dashboard/page";
-import { createFormData } from "@/app/shared/usecase/createFormData";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useToast } from "@/components/ui/use-toast";
 import Loading from "@/app/shared/components/Loading";
-import { postHome } from "../../home/core/requests/_post_request";
 import Wygywyg from "@/app/shared/components/Wygywyg";
-import { TYPE_PAGE } from "@/app/shared/constant/type-page";
 import { postPageDiocese } from "../core/requests/_post_request";
 
-const Create = () => {
+const CreateDiocesePages = () => {
   const router = useRouter();
   const [isLoading, setIsloading] = useState<boolean>(false);
   const { toast } = useToast();
@@ -67,4 +63,4 @@ const Create = () => {
   );
 };
 
-export default Create;
+export default CreateDiocesePages;

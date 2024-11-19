@@ -17,7 +17,7 @@ interface DataModel {
   ecoleId: number | null;
   endDate: string;
 }
-const Create = () => {
+const CreateEleveCath = () => {
   const router = useRouter();
   const [data, setData] = useState<DataModel>({
     firstName: "",
@@ -170,4 +170,4 @@ const Create = () => {
   );
 };
 
-export default Create;
+export default CreateEleveCath;

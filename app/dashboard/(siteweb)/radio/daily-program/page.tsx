@@ -26,7 +26,7 @@ import { deleteDailyProgram } from "./core/requests/_del_request";
 import { toast } from "@/components/ui/use-toast";
 import { PaginationPage } from "@/app/shared/components/Pagination";
 
-const Radio = () => {
+const RadioDaily = () => {
   const data = useResponseDataDailyProgram();
   const { request, isLoading, response } = useResponseDailyProgramData();
   const dispatch: AppDispatch = useDispatch();
@@ -120,4 +120,4 @@ const Radio = () => {
   );
 };
 
-export default Radio;
+export default RadioDaily;

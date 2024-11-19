@@ -26,7 +26,7 @@ import { Responsable } from "../core/models/responsable.model";
 import Image from "next/image";
 import DashboardLayout from "@/app/dashboard/page";
 
-const EleveCathesistePage = () => {
+const ResponsabblePage = () => {
   const datas = useResponseDataSanteResponsable();
   const { request, isLoading, response } = useResponseSanteResponsableData();
   const dispatch: AppDispatch = useDispatch();
@@ -123,4 +123,4 @@ const EleveCathesistePage = () => {
   );
 };
 
-export default EleveCathesistePage;
+export default ResponsabblePage;

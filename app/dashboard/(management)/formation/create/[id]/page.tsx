@@ -5,10 +5,6 @@ import { useEffect, useState } from "react";
 import { useRouter, useParams } from "next/navigation";
 import { useToast } from "@/components/ui/use-toast";
 import Loading from "@/app/shared/components/Loading";
-import { Input } from "@/components/ui/input";
-import { Eglise } from "../../../eglise/core/models/eglise.model";
-import { getAllParoasy } from "../../../eglise/core/requests/_get_request";
-import { createFormData } from "@/app/shared/usecase/createFormData";
 import { putFormation } from "../../core/requests/_post_request";
 import { EleveCathesiste } from "../../../eleve-cathesiste/core/models/eleve-cathesiste.model";
 import { getAllEleveCathesiste } from "../../../eleve-cathesiste/core/requests/_get_request";
@@ -18,7 +14,7 @@ interface DataModel {
   eleveId: number | null;
 }
 
-const Create = () => {
+const CreateFormationById = () => {
   const router = useRouter();
   const { id } = useParams();
   const [isLoading, setIsloading] = useState<boolean>(false);
@@ -144,4 +140,4 @@ const Create = () => {
   );
 };
 
-export default Create;
+export default CreateFormationById;

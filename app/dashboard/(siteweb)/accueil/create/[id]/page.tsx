@@ -8,11 +8,11 @@ import { useRouter, useParams } from "next/navigation";
 import { useToast } from "@/components/ui/use-toast";
 import Loading from "@/app/shared/components/Loading";
 import Wygywyg from "@/app/shared/components/Wygywyg";
-import { postHome, putHome } from "../../../home/core/requests/_post_request";
+import { putHome } from "../../../home/core/requests/_post_request";
 import { getHome } from "../../../home/core/requests/_get_request";
 import { TYPE_PAGE } from "@/app/shared/constant/type-page";
 
-const Create = () => {
+const CreateaccueilById = () => {
   const router = useRouter();
   const { id } = useParams();
   const [data, setData] = useState({
@@ -153,4 +153,4 @@ const Create = () => {
   );
 };
 
-export default Create;
+export default CreateaccueilById;

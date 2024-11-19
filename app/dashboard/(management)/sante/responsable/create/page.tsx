@@ -8,7 +8,7 @@ import { useToast } from "@/components/ui/use-toast";
 import Loading from "@/app/shared/components/Loading";
 import { postSanteResponsable } from "../../core/requests/_post_request";
 
-const Create = () => {
+const CreateResponsablePage = () => {
   const router = useRouter();
 
   const [responsable, setResponsable] = useState({
@@ -116,4 +116,4 @@ const Create = () => {
   );
 };
 
-export default Create;
+export default CreateResponsablePage;

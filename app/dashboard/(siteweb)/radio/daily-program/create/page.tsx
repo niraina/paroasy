@@ -9,7 +9,7 @@ import Wygywyg from "@/app/shared/components/Wygywyg";
 import { postDailyProgram } from "../core/requests/_post_request";
 import { Input } from "@/components/ui/input";
 
-const CreateDailyProgram = () => {
+const CreateDailyProgramPage = () => {
   const router = useRouter();
   const [isLoading, setIsloading] = useState<boolean>(false);
   const { toast } = useToast();
@@ -76,4 +76,4 @@ const CreateDailyProgram = () => {
   );
 };
 
-export default CreateDailyProgram;
+export default CreateDailyProgramPage;
