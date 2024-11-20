@@ -1,13 +1,10 @@
-import { fetchRadio } from "@/app/dashboard/(siteweb)/radio/history/core/actions";
-import { Radio } from "@/app/dashboard/(siteweb)/radio/history/core/models/home.model";
-import {
-  useResponseDataRadio,
-  useResponseRadioData,
-} from "@/app/dashboard/(siteweb)/radio/history/lib";
 import { AppDispatch } from "@/app/store/store";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import "./history.scss";
+import { useResponseDataRadio, useResponseRadioData } from "@/app/dashboard/siteweb/radio/history/lib";
+import { fetchRadio } from "@/app/dashboard/siteweb/radio/history/core/actions";
+import { Radio } from "@/app/dashboard/siteweb/radio/history/core/models/home.model";
 
 const History = () => {
   const data = useResponseDataRadio();

@@ -67,35 +67,35 @@ const MenuDash: FC = () => {
           icon={<Home size={24} />}
           subItems={[
             {
-              link: "/dashboard/accueil",
+              link: "/dashboard/siteweb/accueil",
               title: "Couverture",
             },
             {
-              link: "/dashboard/article",
+              link: "/dashboard/siteweb/article",
               title: "Actualitées",
             },
             {
-              link: "/dashboard/diocese-page",
+              link: "/dashboard/siteweb/diocese-page",
               title: "Page Diocèse",
             },
             {
-              link: "/dashboard/tonokira",
+              link: "/dashboard/siteweb/tonokira",
               title: "Paroles",
             },
             {
-              link: "/dashboard/daily",
+              link: "/dashboard/siteweb/daily",
               title: "Programme journalier",
             },
             {
-              link: "/dashboard/radio/history",
+              link: "/dashboard/siteweb/radio/history",
               title: "Historique radio",
             },
             {
-              link: "/dashboard/radio/daily-program",
+              link: "/dashboard/siteweb/radio/daily-program",
               title: "Programme radio",
             },
             {
-              link: "/dashboard/radio/personel",
+              link: "/dashboard/siteweb/radio/personel",
               title: "Responsable radio",
             },
           ]}

@@ -1,6 +1,6 @@
 "use client";
 
-import { getArticle } from "@/app/dashboard/(siteweb)/article/core/requests/_get_request";
+import { getArticle } from "@/app/dashboard/siteweb/article/core/requests/_get_request";
 import Loading from "@/app/shared/components/Loading";
 import { toast } from "@/components/ui/use-toast";
 import { useParams } from "next/navigation";

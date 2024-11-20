@@ -1,9 +1,6 @@
-import { fetchPersonel } from "@/app/dashboard/(siteweb)/radio/personel/core/actions";
-import { Personel } from "@/app/dashboard/(siteweb)/radio/personel/core/models/personel.model";
-import {
-  useResponseDataPersonel,
-  useResponsePersonelData,
-} from "@/app/dashboard/(siteweb)/radio/personel/lib";
+import { fetchPersonel } from "@/app/dashboard/siteweb/radio/personel/core/actions";
+import { Personel } from "@/app/dashboard/siteweb/radio/personel/core/models/personel.model";
+import { useResponseDataPersonel, useResponsePersonelData } from "@/app/dashboard/siteweb/radio/personel/lib";
 import Loading from "@/app/shared/components/Loading";
 import { AppDispatch } from "@/app/store/store";
 import Image from "next/image";

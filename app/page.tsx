@@ -2,28 +2,20 @@
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "./store/store";
 import { useEffect } from "react";
-import { fetchCarousel } from "./dashboard/(siteweb)/carousel/core/actions";
-import {
-  useLoadingHome,
-  useResponseDataHome,
-  useResponseHomeData,
-} from "./dashboard/(siteweb)/home/lib";
-import { fetchHome } from "./dashboard/(siteweb)/home/core/actions";
-import { InterfaceHome } from "./dashboard/(siteweb)/home/core/models/home.model";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import React from "react";
 import Slider from "react-slick";
-import Link from "next/link";
-import {
-  useResponseArticleData,
-  useResponseDataArticle,
-} from "./dashboard/(siteweb)/article/lib";
 import Loading from "./shared/components/Loading";
-import { fetchArticle } from "./dashboard/(siteweb)/article/core/actions";
 import ListCount from "./shared/components/showcase/ListCount";
 import Actuality from "./(home)/actuality";
 import ResponsableHome from "./(home)/responsable";
+import { useResponseArticleData, useResponseDataArticle } from "./dashboard/siteweb/article/lib";
+import { useLoadingHome, useResponseDataHome, useResponseHomeData } from "./dashboard/siteweb/home/lib";
+import { fetchCarousel } from "./dashboard/siteweb/carousel/core/actions";
+import { fetchHome } from "./dashboard/siteweb/home/core/actions";
+import { fetchArticle } from "./dashboard/siteweb/article/core/actions";
+import { InterfaceHome } from "./dashboard/siteweb/home/core/models/home.model";
 
 export default function Home() {
   const articles = useResponseDataArticle();
