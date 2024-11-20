@@ -1,13 +1,10 @@
 "use client";
 import { useDispatch } from "react-redux";
-import {
-  useResponseDataPageDiocese,
-  useResponsePageDioceseData,
-} from "../dashboard/(siteweb)/diocese-page/lib";
 import { AppDispatch } from "../store/store";
 import { useEffect } from "react";
-import { fetchPageDiocese } from "../dashboard/(siteweb)/diocese-page/core/actions";
 import Loading from "../shared/components/Loading";
+import { useResponseDataPageDiocese, useResponsePageDioceseData } from "../dashboard/siteweb/diocese-page/lib";
+import { fetchPageDiocese } from "../dashboard/siteweb/diocese-page/core/actions";
 
 const Diocese = () => {
   const homes = useResponseDataPageDiocese();

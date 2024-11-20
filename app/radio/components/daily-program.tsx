@@ -1,10 +1,6 @@
 "use client";
-
-import { fetchDailyProgram } from "@/app/dashboard/(siteweb)/radio/daily-program/core/actions";
-import {
-  useResponseDailyProgramData,
-  useResponseDataDailyProgram,
-} from "@/app/dashboard/(siteweb)/radio/daily-program/lib";
+import { fetchDailyProgram } from "@/app/dashboard/siteweb/radio/daily-program/core/actions";
+import { useResponseDailyProgramData, useResponseDataDailyProgram } from "@/app/dashboard/siteweb/radio/daily-program/lib";
 import Loading from "@/app/shared/components/Loading";
 import { AppDispatch } from "@/app/store/store";
 import moment from "moment";

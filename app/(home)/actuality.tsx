@@ -1,17 +1,14 @@
 "use client";
 
-import { InterfaceHome } from "../dashboard/(siteweb)/home/core/models/home.model";
-import {
-  useResponseArticleData,
-  useResponseDataArticle,
-} from "../dashboard/(siteweb)/article/lib";
 import { useEffect } from "react";
 import { AppDispatch } from "../store/store";
 import { useDispatch } from "react-redux";
-import { fetchArticle } from "../dashboard/(siteweb)/article/core/actions";
 import Loading from "../shared/components/Loading";
 import Slider from "react-slick";
 import Link from "next/link";
+import { useResponseArticleData, useResponseDataArticle } from "../dashboard/siteweb/article/lib";
+import { fetchArticle } from "../dashboard/siteweb/article/core/actions";
+import { InterfaceHome } from "../dashboard/siteweb/home/core/models/home.model";
 
 const Actuality = () => {
   const articles = useResponseDataArticle();

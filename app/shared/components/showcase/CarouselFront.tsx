@@ -8,7 +8,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel"
-import { CarouselInterface } from "@/app/dashboard/(siteweb)/carousel/core/models"
+import { CarouselInterface } from "@/app/dashboard/siteweb/carousel/core/models"
 interface PropsType {
   data: CarouselInterface[]
 }

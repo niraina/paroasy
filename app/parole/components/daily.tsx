@@ -1,9 +1,6 @@
-import { fetchTonokiraDaily } from "@/app/dashboard/(siteweb)/daily/core/actions";
-import { Daily } from "@/app/dashboard/(siteweb)/daily/core/models/home.model";
-import {
-  useResponseDataTonokiraDaily,
-  useResponseTonokiraDailyData,
-} from "@/app/dashboard/(siteweb)/daily/lib";
+import { fetchTonokiraDaily } from "@/app/dashboard/siteweb/daily/core/actions";
+import { Daily } from "@/app/dashboard/siteweb/daily/core/models/home.model";
+import { useResponseDataTonokiraDaily, useResponseTonokiraDailyData } from "@/app/dashboard/siteweb/daily/lib";
 import Loading from "@/app/shared/components/Loading";
 import { AppDispatch } from "@/app/store/store";
 import { useEffect, useState } from "react";

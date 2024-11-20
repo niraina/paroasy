@@ -4,14 +4,11 @@ import { AppDispatch } from "@/app/store/store";
 import { useDispatch } from "react-redux";
 import { PaginationPage } from "@/app/shared/components/Pagination";
 import Loading from "@/app/shared/components/Loading";
-import {
-  useResponseDataTonokira,
-  useResponseTonokiraData,
-} from "../../dashboard/(siteweb)/tonokira/lib";
-import { fetchTonokira } from "../../dashboard/(siteweb)/tonokira/core/actions";
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
 import { Link2 } from "lucide-react";
+import { useResponseDataTonokira, useResponseTonokiraData } from "@/app/dashboard/siteweb/tonokira/lib";
+import { fetchTonokira } from "@/app/dashboard/siteweb/tonokira/core/actions";
 const ParoleComponents = () => {
   const homes = useResponseDataTonokira();
   const { request, isLoading, response } = useResponseTonokiraData();
