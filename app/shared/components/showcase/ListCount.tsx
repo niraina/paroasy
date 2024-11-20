@@ -39,9 +39,11 @@ const ListCount = () => {
   }, []);
   return (
     <div className="row mt-5 mb-5">
+    {eleve ? 
       <div className="col-3 mb-2">
-        <CardCount title="Ecole cathesiste" count={eleve.length} />
+        <CardCount title="Ecole cathesiste" count={eleve?.length} />
       </div>
+    : ""}
       {etablisement?.map((item: Etablisement) => (
         <div className="col-3 mb-2" key={item.id}>
           <CardCountEcole
